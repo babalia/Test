@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" th:src="@{/static/assets/js/vue.js}"></script>
+</head>
+<body>
+<!-- vue.js demo -->
+       <div id="root">
+          <ol>
+              <li v-for="i in item">
+                  {{i.name}}
+              </li>
+          </ol>
+       </div>
+
+
+     <script>
+         new Vue({
+             el:"#root",
+             data:{
+                 item:[
+                     {name:'yes'},
+                     {name:'yes1'},
+                     {name:'yes2'},
+                     {name:'yes3'}
+                 ]
+             }
+         })
+     </script>
+</body>
+</html>

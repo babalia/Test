@@ -1,0 +1,271 @@
+
+body,html,.page_content{
+	height: 100%;
+}
+body{
+	padding: 10px;
+}
+.page_content{
+	padding: 0;
+}
+.full_height{
+	box-sizing: border-box;
+	padding: 0;
+	min-height: 100%;
+	overflow: hidden;
+}
+.inIbox_cs_L,
+.inIbox_cs_R{
+	height: 100%;
+}
+.inIbox_cs_L{
+	border-right: 10px solid #f2f2f2;
+	width: 300px;
+	position:absolute;
+	
+}
+/*.inIbox_cs_C{
+	background: #f2f2f2; 
+	width: 10px; 
+	height: 100%;
+	margin-top: -20px;
+	padding-bottom: 40px; 
+	box-sizing: content-box; 
+}*/
+.inIbox_cs_L .ibox_title{
+	position: absolute;
+	padding: 20px;
+	width: 100%;
+	background: #fff \0;/*forIE8*/
+	background:rgba(255,255,255,0.9) ;
+}
+.inIbox_cs_L_ctn{
+	padding: 20px;
+	padding-top: 90px;
+	overflow: auto;
+	height: 100%;
+}
+ .ztree li a.curSelectedNode {
+    background-color: #02C8A0;
+    color: #fff;
+    height: auto;
+}
+/* .ztree li a.curSelectedNode span.button{
+ 	background-image: url("./img/zTreeStandard_active.png") 	
+ } */
+    
+.inIbox_cs_R{
+	margin-left: 300px;
+}
+
+.inIbox_cs_R .ibox_title{
+	padding: 20px;
+	position: relative;
+}
+.search_wrap{
+	position: absolute;
+	right: 20px;
+	top: 18px;
+}
+.search_wrap input.search{
+	padding-right:30px ;
+}
+.search_wrap .iconfont{
+	position: absolute;
+	right: 10px;
+	top: 6px;
+	color: #999;
+	cursor: pointer;
+}
+.search_wrap .iconfont.active,
+.search_wrap .iconfont:hover{
+	color: #02C8A0;
+}
+
+.inIbox_cs_R .main_ctn{
+	padding:20px;
+	padding-top: 0;
+}
+table.file_list thead{
+	background-color: #f0f0f0;
+	
+}
+table.file_list thead th{
+	background-color: #f0f0f0;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	border-bottom: none;
+	
+	
+}
+table.file_list>tbody>tr:hover {
+background-color: #fafafa;
+}
+table.file_list>tbody>tr>td{
+border-top: 1px solid #f0f0f0;
+}
+
+table.file_list> tbody .favorites_btn {
+	color: #dadada;
+	cursor: pointer;
+	font-size: 18px
+}
+table.file_list> tbody .favorites_btn.active {
+	color: #ffb033;
+}
+table.file_list> tbody .tools_box {
+ clear: both;
+}
+table.file_list> tbody .tools_box  i{
+	margin-right: 14px;
+	color: #999;
+	//display: none;
+	cursor: pointer;
+	visibility: hidden;
+}
+
+
+table.file_list> tbody tr:hover .tools_box i{
+	//display:inline-block;
+	visibility:visible;
+}
+table.file_list> tbody tr:hover .tools_box i.show_btn{
+ //display:inline-block;
+ visibility:visible;
+}
+table.file_list> tbody tr:hover .tools_box i.hide_btn{
+  //display:none;
+  visibility: hidden;
+}
+
+
+table.file_list> tbody .tools_box i:hover {
+	color: #02C8A0;
+}
+
+td.file_folder{
+	background: url(../img/knowledge_manage/file_folder.png) no-repeat left 10px;
+}
+td.file_excel{
+	background: url(../img/knowledge_manage/excel.png) no-repeat left 10px;
+}
+td.file_word{
+	background: url(../img/knowledge_manage/word.png) no-repeat left 10px;
+}
+td.file_ppt{
+	background: url(../img/knowledge_manage/ppt.png) no-repeat left 10px;
+}
+td.file_pdf{
+	background: url(../img/knowledge_manage/pdf.png) no-repeat left 10px;
+}
+.inIbox_cs_R .footer{
+	overflow: hidden;
+}
+
+.inIbox_cs_R .footer .btn_new_folder,
+.inIbox_cs_R .footer .btn_upload_files{
+	border: 1px dashed #e5e5e5;
+	padding: 10px;
+	width: 50%;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: 0.3s;
+	-moz-transition: 0.3s;
+	-webkit-transition: 0.3s;	
+}
+.inIbox_cs_R .footer .btn_new_folder:hover,
+.inIbox_cs_R .footer .btn_upload_files:hover{
+	border: 1px solid #02C8A0;
+	color:#02C8A0;
+}
+
+.inIbox_cs_R .footer .btn_new_folder i,
+.inIbox_cs_R .footer .btn_upload_files i{
+	color: #02C8A0;
+	font-size: 20px;
+	margin-right: 8px;
+}
+
+/*文件属性部分开始*/
+.file_property_wrap{
+	width: 320px;
+	border: 1px solid #dadada;
+	border-radius: 4px;
+	box-shadow: 0px 0px 8px #dadada;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: #fff;
+	display: none;
+}
+.file_property_wrap .tab_wrap{
+	margin-top: 0;
+}
+.file_property_wrap .tab_menu_ctn{
+	width: 50%;
+	box-sizing: border-box;
+	margin-right: 0px !important;
+}
+.text_list li{
+	/*属性列表内容*/
+	overflow: hidden;
+	padding: 5px 0px;
+}
+.text_list label{
+	float: left;
+	width: 25%;
+	color: #999;
+	font-weight: normal;
+}
+.text_list h3,
+.text_list p{
+	float: left;
+	width: 75%;
+}
+.text_list.history_list li label{
+	/*日志列表内容*/
+	width: 12%;
+}
+.text_list.history_list h3,
+.text_list.history_list p{
+	width: 88%;
+}
+.text_list.history_list p{
+	color: #999;
+}
+
+.file_property_wrap .header{
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px 30px 10px 50px; 
+}
+
+.file_property_wrap .close_btn{
+	color: #ccc;
+	font-size: 14px;
+	float: right;
+	margin-right:-18px;
+	cursor: pointer;
+	
+}
+.file_property_wrap .close_btn:hover{
+	color: #999;
+}
+
+
+.file_property_wrap .file_folder{
+	background: url(../img/knowledge_manage/file_folder.png) no-repeat 14px 10px;
+}
+.file_property_wrap .file_excel{
+	background: url(../img/knowledge_manage/excel.png) no-repeat 14px 10px;
+}
+.file_property_wrap .file_word{
+	background: url(../img/knowledge_manage/word.png) no-repeat 14px 10px;
+}
+.file_property_wrap .file_ppt{
+	background: url(../img/knowledge_manage/ppt.png) no-repeat 14px 10px;
+}
+.file_property_wrap .file_pdf{
+	background: url(../img/knowledge_manage/pdf.png) no-repeat 14px 10px;
+}
+/*文件属性部分开始*/

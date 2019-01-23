@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style type="text/css">
+    #myInput {
+        background-image: url('https://static.runoob.com/images/mix/searchicon.png'); /* 搜索按钮 */
+        background-position: 10px 12px; /* 定位搜索按钮 */
+        background-repeat: no-repeat; /* 不重复图片*/
+        width: 100%;
+        font-size: 16px; /* 加大字体 */
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+
+    #myUL {
+        /* 移除默认的列表样式 */
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #myUL li a {
+        border: 1px solid #ddd; /* 链接添加边框 */
+        margin-top: -1px;
+        background-color: #f6f6f6;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 18px;
+        color: black;
+        display: block;
+    }
+
+    #myUL li a.header {
+        background-color: #e2e2e2;
+        cursor: default;
+    }
+
+    #myUL li a:hover:not(.header) {
+        background-color: #eee;
+    }
+</style>
+<body>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="搜索...">
+
+<ul id="myUL">
+    <li><a href="#" class="header">A</a></li>
+    <li><a href="#">Adele</a></li>
+    <li><a href="#">Agnes</a></li>
+
+    <li><a href="#" class="header">B</a></li>
+    <li><a href="#">Billy</a></li>
+    <li><a href="#">Bob</a></li>
+
+    <li><a href="#" class="header">C</a></li>
+    <li><a href="#">Calvin</a></li>
+    <li><a href="#">Christina</a></li>
+    <li><a href="#">Cindy</a></li>
+</ul>
+</body>
+<script type="text/javascript">
+    function myFunction() {
+        // 声明变量
+        var input, filter, ul, li, a, i;
+        input = document.getElementById('myInput');
+        filter = input.value;
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName('li');
+
+        // 循环所有列表，查找匹配项
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+
+</script>
+</html>

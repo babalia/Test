@@ -1,0 +1,28 @@
+server:
+  port: 80
+  session-timeout: 30
+  tomcat.max-threads: 0
+  tomcat.uri-encoding: UTF-8
+
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.1.52:3306/dg_sqm_dtd?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: dgsqmdtd
+    password: 123456!Ab
+    driver-class-name: com.mysql.jdbc.Driver
+    initialSize: 1
+    maxActive: 20
+    maxIdle: 8
+
+mvc:
+   view:
+   prefix: /WEB-INF/jsp/
+   suffix: .jsp
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+
+

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.yuhui.dao.UserDao">
+
+    <resultMap type="com.yuhui.domain.user.Role" id="RoleMap">
+        <id column="rid" property="id" jdbcType="VARCHAR"/>
+        <result column="rname" property="name" jdbcType="VARCHAR"/>
+        <result column="rdescription" property="description" jdbcType="VARCHAR"/>
+        <collection property="privileges" javaType="java.util.List" ofType="com.yuhui.domain.user.Privilege">
+            <id column="pid" property="id" jdbcType="VARCHAR" />
+            <result column="pname" property="name" jdbcType="VARCHAR" />
+            <result column="purl" property="url" jdbcType="VARCHAR" />
+        </collection>
+    </resultMap>
+
+    <resultMap type="com.yuhui.domain.user.User" id="BaseResultMap">
+        <id property="id" column="uid"/>
+        <result property="name" column="uname"/>
+        <result property="phone" column="uphone"/>
+        <result property="mail" column="umail"/>
+        <result property="realName" column="real_name"/>
+        <result property="channelType" column="channelType"/>
+        <result property="business" column="business"/>
+        <result property="branch" column="branch"/>
+        <result property="townName" column="town_name"/>
+        <result property="sapHall" column="sap_hall"/>
+        <result property="businessHall" column="business_hall"/>
+        <result property="shopRole" column="shop_role"/>
+        <result property="shopArea" column="shop_area"/>
+        <result property="reaRelease" column="rea_release"/>
+        <result property="deptId" column="dept_id"/>
+        <result property="deptName" column="dept_name"/>
+        <collection property="Roles" column="uid" select="queryRole"></collection>
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        u.name as uname,u.id as uid,u.mail as umail,
+        u.phone as uphone,u.channelType,u.business,u.town_name,u.sap_hall,u.shop_role,u.shop_area,u.rea_release,u.business_hall,u.branch,u.dept_id as deptId,
+        u.dept_name as deptName,u.real_name
+     </sql>
+
+    <select id="getById" resultMap="BaseResultMap" parameterType="string">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_user as u
+        <where>
+            u.id=#{id}
+        </where>
+    </select>
+
+    <select id="queryOne" parameterType="com.yuhui.domain.user.User" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from sys_user as u
+        <where>
+            <if test="id!=null and id!=''">
+                u.id=#{id}
+            </if>
+            <if test="name!=null and name!=''">
+                and u.name=#{name}
+            </if>
+            <if test="realName!=null and realName!=''">
+                and u.real_name=#{realName}
+            </if>
+            <if test="passWord!=null and passWord!=''">
+                and u.password=#{passWord}
+            </if>
+        </where>
+    </select>
+
+    <!-- <select id="queryList" resultMap="BaseResultMap">
+        select
+          <include refid="Base_Column_List"/>
+          from sys_user as u
+         <where>
+            <if test="name!=null and name!=''">
+                 and u.name like CONCAT('%',#{name},'%')
+             </if>
+             <if test="realName!=null and realName!=''">
+                 and u.real_name like CONCAT('%',#{realName},'%')
+             </if>
+             <if test="phone!=null and phone!=''">
+                 and u.phone like CONCAT('%',#{phone},'%')
+             </if>
+             <if test="mail!=null and mail!=''">
+                 and u.mail like CONCAT('%',#{mail},'%')
+             </if>
+             <if test="channelType!=null and channelType!=''">
+                 and u.channelType like CONCAT('%',#{channelType},'%')
+             </if>
+         </where>
+         order by id desc
+     </select>
+     &lt;!&ndash; 用户和角色 &ndash;&gt;
+     <select id="queryUserRoleList" resultMap="BaseResultMap">
+      select * from sys_user su left join sys_user_role sr on su.id=sr.uid
+     </select>
+
+     <insert id="save" parameterType="com.yuhui.domain.system.User" useGeneratedKeys="true" keyProperty="id">
+          insert into sys_user (name,password,phone,mail,channelType,business,branch,town_name,sap_hall,shop_role,shop_area,rea_release,business_hall,real_name,dept_id,dept_name)
+          values(#{name},#{passWord},#{phone},#{mail},#{channelType},#{business},#{branch},#{townName},#{sapHall},#{shopRole},#{shopArea},#{reaRelease},#{businessHall},#{realName},#{deptId},#{deptName})
+     </insert>
+
+     <delete id="delete" parameterType="com.yuhui.domain.system.User">
+         delete from sys_user where id=#{id}
+     </delete>
+
+     <select id="count" parameterType="com.yuhui.domain.system.User" resultType="int">
+         select count(1) from sys_user as u
+         <where>
+            <if test="name!=null and name!=''">
+                 and u.name like CONCAT('%',#{name},'%')
+             </if>
+             <if test="phone!=null and phone!=''">
+                 and u.phone like CONCAT('%',#{phone},'%')
+             </if>
+             <if test="mail!=null and mail!=''">
+                 and u.mail like CONCAT('%',#{mail},'%')
+             </if>
+         </where>
+     </select>
+
+     <update id="update" parameterType="com.yuhui.domain.system.User">
+         update sys_user
+          <set>
+              <if test="phone!=null and phone!=''">
+                  phone=#{phone},
+              </if>
+              <if test="mail!=null and mail!=''">
+                  mail=#{mail},
+              </if>
+              <if test="passWord!=null and passWord!=''">
+                  passWord=#{passWord},
+              </if>
+              <if test="channelType!=null">
+                  channelType=#{channelType},
+              </if>
+              <if test="realName!=null and realName!=''">
+                  real_name=#{realName},
+              </if>
+              <if test="deptId!=null and deptId!=''">
+                  dept_id=#{deptId},
+              </if>
+              <if test="deptName!=null and deptName!=''">
+                  dept_name=#{deptName},
+              </if>
+              <if test="business!=null">
+                  business=#{business},
+              </if>
+              <if test="branch!=null">
+                  branch=#{branch},
+              </if>
+              <if test="townName!=null">
+                  town_name=#{townName},
+              </if>
+              <if test="sapHall!=null">
+                  sap_hall=#{sapHall},
+              </if>
+              <if test="shopRole!=null">
+                  shop_role=#{shopRole},
+              </if>
+              <if test="shopArea!=null">
+                  shop_area=#{shopArea},
+              </if>
+              <if test="reaRelease!=null">
+                  rea_release=#{reaRelease},
+              </if>
+              <if test="businessHall!=null">
+                  business_hall=#{businessHall},
+              </if>
+          </set>
+         where id=#{id}
+     </update>
+
+     <insert id="saveUserRole" parameterType="java.util.List">
+          insert into sys_user_role (rid,uid) values
+         <foreach collection="list" item="item" index="index" separator="," >
+           (#{item.rid},#{item.uid})
+         </foreach>
+     </insert>
+
+     <delete id="deleteUserRole" parameterType="string">
+         delete from sys_user_role where uid=#{id}
+     </delete>
+
+     <select id="queryRole" resultMap="RoleMap" parameterType="string">
+         select r.name as rname,r.id as rid,r.description as rdescription,
+         p.id as pid,p.name as pname,p.url as purl
+         from sys_user_role as ur left join sys_role as r on r.id=ur.rid left join
+         sys_role_privilege as r2p on r.id=r2p.rid left join sys_privilege as p on r2p.pid=p.id
+         where ur.uid=#{uid}
+     </select>-->
+    <select id="queryRole" resultMap="RoleMap" parameterType="string">
+		select r.name as rname,r.id as rid,r.description as rdescription,
+		p.id as pid,p.name as pname,p.url as purl
+		from sys_user_role as ur left join sys_role as r on r.id=ur.rid left join
+		sys_role_privilege as r2p on r.id=r2p.rid left join sys_privilege as p on r2p.pid=p.id
+		where ur.uid=#{uid}
+	</select>
+</mapper>
+

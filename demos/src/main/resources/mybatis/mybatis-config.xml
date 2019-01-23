@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 	<properties resource="jdbc.properties"> -->
+    <!-- 		<property name="CUST" value="${jdbc.pulbic.cust}"/> -->
+    <!-- 		<property name="PUB" value="${jdbc.pulbic.pub}"/> -->
+    <!-- 		<property name="ETL" value="${jdbc.pulbic.etl}"/> -->
+    <!-- 		<property name="EXCU" value="${jdbc.pulbic.excu}"/> -->
+    <!-- 		<property name="DTD" value="${jdbc.pulbic.dtd}"/> -->
+    <!-- 	</properties> -->
+    <settings>
+        <setting name="safeRowBoundsEnabled" value="false" />
+        <setting name="jdbcTypeForNull" value="NULL" />
+        <setting name="logImpl" value="STDOUT_LOGGING" />
+        <setting name="cacheEnabled" value="true" />
+
+    </settings>
+</configuration>

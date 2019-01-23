@@ -1,0 +1,60 @@
+.ibox_title_h1 {
+ 	width:85px;
+ 	font-size: 16px;
+ 	background: url(../img/opportunity_management/line_bg.png) no-repeat left center #fff;
+ 	display: inline-block;
+ 	padding-left: 10px;
+ }
+ .in_ibox_cs_flod_fh1{
+ 	min-height: 130px;
+ }
+.basic-info1{
+	background:none ;
+}
+.basic-info1 .basicInfo-item input{
+	width:100%;
+}
+.basic-info1 .basicInfo-block .basicInfo-item.value{
+	width:65%;
+}
+.basic-info1 .basicInfo-block .basicInfo-item.name{
+	color:#333;
+}
+.basic-info1 .basicInfo-block .basicInfo-item {
+    line-height: 50px;
+    height:50px;
+    vertical-align: middle;
+}
+.ibox_title_box1{
+	padding:10px 0px;
+}
+.basic-info1 .date_picker_wrap{
+	width:46%;
+}
+.basic-info1 .checkbox-inline, .radio-inline{
+	padding-left:0px;
+}
+.basic-info1 .checkbox-inline+.checkbox-inline, .radio-inline+.radio-inline{
+	margin-left:0px;
+}
+.value textarea{
+border-radius: 0;
+    border: 1px solid #dadada;
+    width: 100%;
+    /*min-height: 80px;*/
+    font-size: 14px;
+    padding: 6px;
+    box-shadow: none;	
+}
+ .value textarea:focus {
+    border: 1px solid #02C8A0;
+    outline: none;
+}
+.basic-info1 .basicInfo-block .basicInfo-item1{
+height: 80px;	
+line-height:26px ;
+}
+.basic-info1 .basicInfo-block .basicInfo-item2{
+height: 80px;	
+line-height:45px ;
+}

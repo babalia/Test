@@ -1,0 +1,15 @@
+
+.file_download{
+	color: #666;
+	cursor: pointer;
+}
+.file_download:hover{
+	color: #23C6C8;
+	text-decoration: underline;
+}
+.file_download .excel_icon{
+	color: #05b45c;
+	padding-right:10px;
+	
+	
+}

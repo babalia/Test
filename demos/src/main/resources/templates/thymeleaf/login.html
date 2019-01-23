@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!--content="IE=edge" 通知 IE 采用其所支持的最新的模式。-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--content="webkit" 让部分国产浏览器（360）默认采用高速模式渲染页面。-->
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>政企项目支撑管理平台</title>
+    <!--公共样式开始-->
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/css/base.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/bootstrap/css/bootstrap-table.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/bootstrap/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/bootstrap/css/style.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/bootstrap/css/select2.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/css/common_ui.css}" />
+    <!-- <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/page_common_ui.css" /> -->
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/bootstrap/css/bootstrap-datetimepicker.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/css/Ztree/css/zTreeStyle/zTreeStyle.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/js/icheck/skins/flat/green.css}"/>
+    <!--公共样式结束-->
+
+    <!--自定义样式开始 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/css/layout.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/assets/css/login.css}"/>
+
+    <!-- 自定义样式结束 -->
+</head>
+<body>
+
+<div class="login_content">
+    <div class="login_box">
+        <div class="login_header">
+            欢迎使用社渠三单系统！
+        </div>
+        <div class="user_name">
+            <i class="iconfont">&#xe9bd;</i><input type="text" id="username" name="username"  placeholder="用户名" />
+        </div>
+        <div class="pass_word">
+            <i class="iconfont">&#xe7c6;</i>
+            <input type="password"  id="password" name="password" placeholder="密码" />
+        </div>
+        <!--<div class="yanzm">
+            <%&#45;&#45;<i class="iconfont">&#xe611;</i><input type="text" name="" id="input1"  placeholder="验证码" class="v_code"/>
+            <input type="text"  onclick="createCode()" readonly id="checkCode" class="unchanged" />&#45;&#45;%>
+            <i class="iconfont">&#xe611;</i><input type="text" name="" id="inputsms"  placeholder="短信验证码" class="v_code"/>
+            <input type="button"  onclick="sendemail()"  id="getCodesms" class="codeYanz" value="获取验证码" />
+        </div>-->
+        <div class="tips" id="tipsInfo" style="display: none">
+            收不到验证码?请致电管理员18680289931郑先生
+        </div>
+        <div class="confirm_button">
+            <button type="button" class="btn_main_cs"  id="enter">登录</button>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+<!--公共JS开始-->
+<script type="text/javascript" th:src="@{/static/assets/js/jquery-1.9.1.js}"></script>
+<script type="text/javascript" th:src="@{/static/assets/bootstrap/js/bootstrap.min.js}"></script>
+<script type="text/javascript" th:src="@{/static/assets/bootstrap/js/bootstrap-datetimepicker.js}"></script>
+<script type="text/javascript" th:src="@{/static/assets/bootstrap/js/bootstrap-datetimepicker.zh-CN.js}"></script>
+<script type="text/javascript" th:src="@{/static/assets/bootstrap/js/app.js}"></script>
+<script type="text/javascript" th:src="@{/static/assets/bootstrap/js/select2.min.js}"></script>
+<script type="text/javascript" th:src="@{/static/assets/js/contabs.min.js}"></script>
+<script type="text/javascript" th:src="@{/static/assets/js/layer/layer.js}"></script>
+<script type="text/javascript" th:src="@{/static/assets/bootstrap/js/bootstrap-table.js}"></script>
+<script type="text/javascript" th:src="@{/static/assets/bootstrap/js/bootstrap-table-zh-CN.js}" ></script>
+<script type="text/javascript" th:src="@{/static/assets/js/index.js}"></script>
+<script type="text/javascript" th:src="@{/static/assets/js/myBTTable.js}"></script>
+<script type="text/javascript" th:src="@{/static/assets/js/Ztree/js/jquery.ztree.core-3.5.js}"></script>
+<script type="text/javascript" th:src="@{/static/assets/js/Ztree/js/jquery.ztree.excheck-3.5.js}"></script>
+<script type="text/javascript" th:src="@{/static/assets/js/icheck/icheck.min.js}"></script>
+<script type="text/javascript" th:src="@{/static/assets/js/check/check.js}"></script>
+
+<!--公共JS结束-->
+</html>

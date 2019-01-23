@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.yuhui.dao.FlowInfoDao">
+
+    <resultMap id="flowInfo" type="com.yuhui.domain.test.FlowInfo">
+        <result column="Id" property="id" jdbcType="VARCHAR"></result>
+        <result column="flow_initiator" property="flowInitiator" jdbcType="VARCHAR"></result>
+        <result column="flow_name" property="flowName" jdbcType="VARCHAR"></result>
+        <result column="recipient_type" property="recipientType" jdbcType="VARCHAR"></result>
+        <result column="flow_order" property="flowOrder" jdbcType="VARCHAR"></result>
+        <result column="flow_role" property="flowRole" jdbcType="VARCHAR"></result>
+        <result column="flow_person" property="flowPerson" jdbcType="VARCHAR"></result>
+        <result column="flow_status" property="flowStatus" jdbcType="VARCHAR"></result>
+        <result column="flow_advise" property="flowAdvise" jdbcType="VARCHAR"></result>
+        <result column="flow_next" property="flowNext" jdbcType="VARCHAR"></result>
+        <result column="flow_last" property="flowLast" jdbcType="VARCHAR"></result>
+        <result column="flow_link" property="flowLink" jdbcType="VARCHAR"></result>
+        <result column="flow_link_advise" property="flowLinkAdvise" jdbcType="VARCHAR"></result>
+        <result column="CreateDate" property="createDate" jdbcType="VARCHAR"></result>
+
+    </resultMap>
+    
+    <sql id="base_column">
+        a.flow_initiator,a.flow_name,a.recipient_type,a.flow_order,a.flow_role,a.flow_person,
+        a.flow_status,a.flow_advise,a.flow_next,a.flow_last,a.flow_link,a.flow_link_advise,a.CreateDate createDate
+    </sql>
+    
+<select id="findAllData" resultMap="flowInfo">
+  select 
+  <include refid="base_column"/>
+   from
+       flow_info a
+  <where>
+      <if test="id !=null and id!=''">
+          AND a.id = #{id}
+      </if>
+  </where>
+</select>
+    
+    <insert id="saveFlowInfo">
+        insert into flow_info
+        (
+         Id,
+         flow_initiator,
+         flow_name,
+         recipient_type,
+         flow_order,
+         flow_role,
+         flow_person,
+         flow_status,
+         flow_advise,
+         flow_next,
+         flow_last,
+         flow_link,
+         flow_link_advise,
+         CreateDate
+        )
+        VALUES
+        (
+        {id},
+        {flowInitiator},
+        {flowName},
+        {recipientType},
+        {flowOrder},
+        {flowRole},
+        {flowPerson},
+        {flowStatus},
+        {flowAdvise},
+        {flowNext},
+        {flowLast},
+        {flowLink},
+        {flowLinkAdvise},
+        {createDate}
+        )
+
+    </insert>
+
+</mapper>
+

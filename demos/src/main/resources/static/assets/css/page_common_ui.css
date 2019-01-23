@@ -1,0 +1,25 @@
+﻿
+.ibox_cs .ibox_title .h4 {
+	padding-left: 10px;
+}
+.text_style_box .float_L{
+	width: 50%;
+}
+.text_style_box .float_L:last-child{
+	background-color:#fafafa;
+}
+.file_download{
+	
+	color: #666;
+	cursor: pointer;
+}
+.file_download:hover{
+	color: #23C6C8;
+	text-decoration: underline;
+}
+.file_download .excel_icon{
+	color: #05b45c;
+	padding-right:10px;
+	
+	
+}

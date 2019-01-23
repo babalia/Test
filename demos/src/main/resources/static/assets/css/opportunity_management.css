@@ -1,0 +1,134 @@
+.Business_name{
+	text-decoration: underline;
+	color:#333;
+	cursor:pointer ;
+}
+.Business_name:hover{
+	text-decoration: underline;
+	color:#02c8a0;
+}
+.assigned{
+	width:16px;
+	height:16px;
+	background:url(../img/common_img/icon_zqtb.png) no-repeat left center ;
+	vertical-align: middle;
+	display: inline-block;
+	margin-right:10px;
+}
+.no_assigned{
+	width:16px;
+	height:16px;
+	background:url(../img/common_img/icon_ktts.png) no-repeat left center ;
+	vertical-align: middle;
+	display: inline-block;
+	margin-right:10px;
+}
+.ellipsis{
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width:200px;
+    text-align: center;
+    cursor:pointer ;
+}
+.Opportunity_management_details{
+	width:836px;
+	/*height:518px;*/
+	background:#fff ;
+	padding:20px 30px;
+	box-sizing: border-box;
+	display:none ;
+}
+.cmn-clearfix:after {
+ 	content: '\0020';
+ 	display: block;
+ 	height: 0;
+ 	font-size: 0;
+ 	clear: both;
+ 	overflow: hidden;
+ 	visibility: hidden;
+ }
+ 
+ .basic-info {
+ 	margin: 10px 0px 25px;
+ 	clear: both;
+ 	background: url(../img/opportunity_management/basicInfo-bg_7819f20.png);
+ 	overflow: hidden;
+ 	width: 766px;
+ }
+ 
+ .basic-info .basicInfo-block {
+ 	width: 382px;
+ 	float: left;
+ 	margin-top: 0px;
+ }
+ 
+ .basic-info .basicInfo-block .basicInfo-item.name {
+ 	width: 150px;
+ 	padding: 0 5px 0 12px;
+ 	font-weight: 700;
+ 	overflow: hidden;
+ 	text-overflow: ellipsis;
+ 	white-space: nowrap;
+ 	word-wrap: normal;
+ 	color: #999;
+ 	text-align: right;
+ 	margin-right:5px;
+ }
+ 
+ .basic-info .basicInfo-block .basicInfo-item {
+ 	line-height: 34px;
+ 	display: block;
+ 	padding: 0;
+ 	margin: 0;
+ 	float: left;
+ }
+ 
+ .basic-info .basicInfo-block .basicInfo-item.value {
+ 	zoom: 1;
+ 	color: #333;
+ 	width: 200px;
+ 	float: left;
+ 	position: relative;
+ 	line-height:34px;
+ }
+ 
+ .basic-info .basicInfo-block .basicInfo-item {
+ 	line-height: 34px;
+ 	display: block;
+ 	padding: 0;
+ 	margin: 0;
+ 	float: left;
+ }
+ 
+ .tangram-tree dl,
+ dt,
+ dd {
+ 	margin: 0;
+ 	padding: 0;
+ }
+ .Device_Information {
+ 	/*width:85px;*/
+ 	padding-right: 10px;
+ 	font-size: 16px;
+ 	background: url(../img/opportunity_management/line_bg.png) no-repeat left center #fff;
+ 	display: inline-block;
+ 	padding-left: 10px;
+ }
+.line-bg{background:url(../img/opportunity_management/line_03.png) repeat-x 250px center;}
+.Assigned_person{
+	width:500px;
+	height:300px;
+	background:#fff ;
+	padding:20px 30px;
+	box-sizing: border-box;
+	display:none ;
+}
+.my_layerSkin_window.layui-layer .layui-layer-title{
+	text-align: left;
+}
+.layui-layer-setwin .layui-layer-closetrue {
+    background-position: 0 -40px;
+    cursor: pointer;
+    }
+

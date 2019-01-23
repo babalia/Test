@@ -1,0 +1,21 @@
+.feedBack_record_wrap{
+	border: 1px solid #e5e5e5;
+	padding: 10px;
+	box-sizing: border-box;
+	overflow-y: auto;
+	max-height:200px;
+	height: 200px \9;/* for IE8 */
+}
+.feedBack_record_wrap li {
+	background: url(../img/feedBack/node_line_bg.png) 10px top no-repeat;
+	padding-left: 48px;
+	box-sizing: border-box;
+	padding-bottom: 10px;
+}
+.feedBack_record_wrap li h4 {
+	padding-bottom: 10px;
+	border-bottom: 1px dashed #e5e5e5;
+}
+.feedBack_record_wrap li:last-child {
+	background: url(../img/feedBack/node_bg.png) 10px top no-repeat;
+}
